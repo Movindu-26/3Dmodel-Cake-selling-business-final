@@ -1,0 +1,582 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white-alpha-40: rgba(255,255,255,0.40);      /*  variables */
+    --white-alpha-25: rgba(255,255,255,0.25);
+    --backdrop-filter-blur: blur(50px);
+    --col: #5c0b21;;
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+/*----no message empty class-----*/
+.empty{
+    text-align: center;
+    text-transform:capitalize;
+    font-size: 30px;
+}
+.message{
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 20px;
+    background: #a2171e;
+    color: #fff;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.message i{
+    cursor: pointer;
+    float: right;
+}
+
+a{
+    text-decoration:none;
+}
+body{
+    background: url('images/sprinkle-caramel-candies-chocolate-cupcake-with-flower-white-background.jpg');
+}
+
+/* register interface */
+.from-container{
+    background-image: url(images/pexels-micheile-7113114.jpg);
+    
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* form */
+.from-container form{
+  
+    width: 500px;
+    height: auto;
+    margin: 0 auto;    
+    padding: 2rem;
+    background: var(--white-alpha-25);
+    /* border: 1px solid var(--white-alpha-40); */
+    backdrop-filter: var(--backdrop-filter-blur);
+    border-radius: 10px;
+}
+
+
+form input, 
+textarea{
+    font-family: "Source Code Pro", sans-serif;;
+    width: 100%;
+    background: var(--white-alpha-25);
+    padding: .7rem 1.4rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: .5rem 0;
+    padding-left: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+
+}
+/* register now button */
+form .btn{
+    background: linear-gradient(45deg, rgb(67, 21, 21), rgb(107, 37, 37));
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 1px; /* Rounded button */
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+
+}
+
+form .btn:hover{
+    background: linear-gradient(45deg, rgb(86, 31, 31), rgb(76, 35, 35)); /* Reversed gradient on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+
+}
+
+/* register now */
+.from-container p.reg{
+    font-family: "Crimson Text", serif;
+    text-align: center;
+    margin: 1rem;
+    font-weight: 800;
+    font-size: 300%;
+    color:rgb(67, 21, 21) ;
+    
+}
+
+
+
+/*-----------admin header----------- */
+header{
+    background: #ffffff;
+    color:rgb(0, 33, 26);
+    width: 100%;
+    padding: 0.5rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease, color 0.3s ease;
+    
+}
+.flex{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+
+
+
+.logo-img {
+        height: 70px;
+        margin: auto 0; 
+        /* margin-right: 10px;  */
+        vertical-align: middle;
+        transition: all .2s ease;
+}
+
+.logo-img:hover{
+    transform: scale(1.2);
+}
+.logo  span{
+    
+        color: black;
+    }
+
+
+.header .navbar a{
+    transition: all .4s ease;
+}
+
+.navbar a, .icons i{
+    font-family: "Play", sans-serif;
+    color:black;
+    font-weight:400;
+    margin: 0 1rem;
+    font-size: 120%;
+    transition: all .9s ease;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color .9s ease;
+}
+
+.header.scrolled {
+    background:rgb(255, 204, 204);
+    color: rgb(10, 8, 8);
+    font-weight:bolder;
+}
+
+.header.scrolled .navbar a,
+.header.scrolled .icons i ,
+ .header.scrolled .logo  span
+{
+    color: rgb(4, 4, 4);
+    
+}
+
+.navbar a:hover{
+    color:#555;
+    transform: translateY(-5px);
+}
+
+.header .icons i:hover{
+    color:#545bba;
+    transform:scale(1.2);
+}
+.header .icons{
+    display: flex;
+}
+
+.header .icons i{
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color:black;
+    transition: all .3s ease;
+    display: inline-block;
+}
+
+#menu-btn{
+    display: none;
+}
+.header .user-box{
+    position: absolute;
+    top: 150%;
+    right: -10%;
+    width: 18rem;
+    padding: .7rem 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #555;
+    font-size: 12px;
+    display: none;
+    transform: .5s;
+}
+
+.header .user-box.active{
+    display: block;
+
+}
+
+.header .user-box span{
+    text-transform: capitalize;
+    color: #5a595c;
+    font-size: 14px;
+}
+
+.logout-btn{
+    background: rgb(255, 204, 204);
+    width: 14rem;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    color: #3c3a3d;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+/*---admin num of user num of pending----*/
+.dashboard{
+    background: url('images/sprinkle-caramel-candies-chocolate-cupcake-with-flower-white-background.jpg');
+}
+.title{
+    font-family: "Roboto Slab", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    color: rgb(0, 33, 26);
+}
+.box-container{
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+    justify-content: center;
+    align-items: center;
+}
+.box-container .box{
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    background: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 5px;
+  
+
+}
+
+.box-container .box h3{
+    font-family: "Quantico", sans-serif;
+    font-size: 3rem;
+    color: rgb(0, 33, 26);
+}
+
+.box-container .box p{
+    font-size: 18px;
+    text-transform:capitalize;
+    margin: 1rem 0;
+}
+.box-container .box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    border-color: #a84caf; /* Add a green border highlight */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly brighter background on hover */
+}
+
+.box-container .box img {
+    width: 100%;
+    border-radius: 15px 15px 0 0; /* Rounded top edges for images */
+    transition: filter 0.3s ease;
+}
+
+.box-container .box:hover img {
+    filter: brightness(1.1); /* Brighten the image slightly on hover */
+}
+
+.box-container .box h3 {
+    font-family: "Quantico", sans-serif;
+    font-size: 1.8rem;
+    color: #000000;
+    margin: 1rem 0;
+    transition: color 0.3s ease;
+}
+
+.box-container .box:hover h3 {
+    color: #af4c98; /* Change heading color on hover */
+}
+
+.box-container .box p {
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 1rem 0;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.box-container .box:hover p {
+    color: #0a0c0c; /* Change paragraph text color on hover */
+}
+
+
+/*-------------add product page---------------*/
+
+.add-products, .show-products, .update-container{
+    background-image: url('images/sprinkle-caramel-candies-chocolate-cupcake-with-flower-white-background.jpg');
+    background-attachment: fixed;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+.add-products h1{
+    color: rgb(0, 33, 26);
+}
+
+.add-products form{
+    width: 50vw;
+    margin:  auto;
+    background:whitesmoke;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: .5px solid black;
+    color: rgb(0, 33, 26);
+
+}
+
+.add-products form label {
+    text-transform: capitalize;
+    color: var(--col);
+}
+
+.add-products form textarea {
+    height: 200px;
+}
+
+
+.show-products .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.show-products .box-container .box{
+    background: #fff;
+    padding-bottom: 10%;
+
+}
+
+.edit, .delete{
+    background: linear-gradient(45deg, rgb(67, 21, 21), rgb(107, 37, 37));
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 1px; /* Rounded button */
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+
+}
+
+.edit:hover, .delete:hover{
+    background: linear-gradient(45deg, rgb(86, 31, 31), rgb(76, 35, 35)); /* Reversed gradient on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+
+    
+}
+
+.show-products .box .detail{
+    font-size: 14px;
+}
+.show-products .box img{
+    width: 100%;
+}
+/*-----------product update button part-----------*/
+.update-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background-image: url('images/pexels-valeriya-1639560.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background: #fff; */
+    z-index: 1100;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.update-container form {
+    box-shadow: var(--box-shadow);
+    width: 50%;
+    background: #fff;
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.update-container .edit,
+.update-container .btn {
+    background: linear-gradient(45deg, rgb(67, 21, 21), rgb(107, 37, 37));
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 1px; /* Rounded button */
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+.update-container .edit:hover,
+.update-container .btn:hover{
+    background: linear-gradient(45deg, rgb(86, 31, 31), rgb(76, 35, 35)); /* Reversed gradient on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+
+}
+.update-container form img {
+    width: 60%;
+}
+
+
+/*----------------------order container----------------------------*/
+.order-container {
+    padding: 3% 7%;
+    background: url('images/sprinkle-caramel-candies-chocolate-cupcake-with-flower-white-background.jpg');
+}
+
+.order-container .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.order-container .box {
+    text-align: left;
+    padding: 1rem;
+}
+
+.order-container .box p {
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    color: purple;
+}
+
+.order-container .box span {
+    color: #555;
+}
+
+.order-container form {
+    text-align: center;
+}
+
+.order-container form select {
+    width: 100%;
+    margin: 1rem 0;
+    padding: .5rem 0;
+    cursor: pointer;
+}
+
+.order-container form input{
+    box-shadow: none;
+    width: 40%;
+}
+
+.box-container.delete{
+    padding: .6rem 12%;
+}
+
+
+/*------user messages-------*/
+.user-container{
+    background: url('images/sprinkle-caramel-candies-chocolate-cupcake-with-flower-white-background.jpg');
+}
+.user-container .box-container,
+.message-container .box-container {
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
+}
+
+.user-container .box-container .box {
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    background: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    width: 290px;
+    height: 200px;
+    line-height: 1;;
+}
+
+.update-container .box-container .box span {
+    color: var(--col);
+}
+
+.update-container .box-container .box p:nth-child(4) {
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+/*------------------media screen---------------------*/
+/* @media (max-width: 991px){
+    #menu-btn{
+        display: block;
+    }
+    .logo{
+        display: block;
+    }
+    .header .flex{
+        position: absolute;
+        top: 149%;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #aa4ff3;
+        background: #fff;
+        transition: .3s ease;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+    .header .flex .navbar .active{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    }
+
+} */
